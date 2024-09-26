@@ -13,13 +13,17 @@ import java.util.Optional;
 @Service
 public class CursoServiceImp implements CursoService {
 
-    @Autowired
     CursoRepository cursoRepository;
+
+    @Autowired
+    public CursoServiceImp(CursoRepository cursoRepository) {
+        this.cursoRepository = cursoRepository;
+    }
 
 
     @Override
     public Long post(Curso curso) {
-        cursoRepository.save(curso);
+        return cursoRepository.save(curso).getId();
     }
 
     @Override
@@ -39,7 +43,7 @@ public class CursoServiceImp implements CursoService {
 
     @Override
     public List<Curso> cursosActivosSegunFecha(Date fecha){
-        List<Curso> cursosSegunFecha = new ArrayList<Curso>();
+        List<Curso> cursosSegunFecha = new ArrayList<>();
         cursoRepository.findAll().forEach(
                 curso -> {
                     if (curso.getFechaFin() == fecha){

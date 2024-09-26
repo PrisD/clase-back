@@ -16,10 +16,14 @@ import java.util.Optional;
 @Service
 public class DocenteServiceImp implements DocenteService {
 
+    DocenteRepository docenteRepository;
+    CursoService cursoService;
+
     @Autowired
-    private DocenteRepository docenteRepository;
-    @Autowired
-    private CursoService cursoService;
+    public DocenteServiceImp(DocenteRepository docenteRepository, CursoService cursoService) {
+        this.docenteRepository = docenteRepository;
+        this.cursoService = cursoService;
+    }
 
     @Override
     public Long post(Docente docente) {

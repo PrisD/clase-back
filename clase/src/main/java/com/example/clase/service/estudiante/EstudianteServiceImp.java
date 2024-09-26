@@ -11,8 +11,14 @@ import java.util.Optional;
 @Service
 public class EstudianteServiceImp implements EstudianteService {
 
+
+    EstudianteRepository estudianteRepository;
+
+
     @Autowired
-    private EstudianteRepository estudianteRepository;
+    public EstudianteServiceImp(EstudianteRepository estudianteRepository) {
+        this.estudianteRepository = estudianteRepository;
+    }
 
     @Override
     public List<Estudiante> findAll() {

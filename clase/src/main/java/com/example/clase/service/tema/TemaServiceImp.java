@@ -10,8 +10,13 @@ import java.util.Optional;
 @Service
 public class TemaServiceImp implements TemaService {
 
+
+    TemaRepository temaRepository;
+
     @Autowired
-    private TemaRepository temaRepository;
+    public TemaServiceImp(TemaRepository temaRepository) {
+        this.temaRepository = temaRepository;
+    }
 
     @Override
     public Long post(Tema tema) {
