@@ -18,23 +18,27 @@ public class Estudiante {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Usa AUTO o SEQUENCE según tu base de datos
     private Long id;
 
-    @Column(name = "legajo")
-    private int legajo;
 
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "dni")
-    private int dni; // Cambié "address" a "dni" para coincidir con el nombre
-
     @Column(name = "fecha_nac")
     private Date fechaNac;
+
+
+/*
+    @Column(name = "legajo")
+    private int legajo;
+
+    @Column(name = "dni")
+    private int dni; // Cambié "address" a "dni" para coincidir con el nombre
 
     @Column(name = "fecha_ingreso")
     private Date fechaIngreso;
 
     @Column(name = "direccion")
     private String direccion;
+*/
 
     // Getters and Setters
 
@@ -46,6 +50,7 @@ public class Estudiante {
         this.id = id;
     }
 
+/*
     public int getLegajo() {
         return legajo;
     }
@@ -53,6 +58,7 @@ public class Estudiante {
     public void setLegajo(int legajo) {
         this.legajo = legajo;
     }
+*/
 
     public String getNombre() {
         return nombre;
@@ -62,14 +68,6 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
     public Date getFechaNac() {
         return fechaNac;
     }
@@ -77,6 +75,15 @@ public class Estudiante {
     public void setFechaNac(Date fechaNac) {
         this.fechaNac = fechaNac;
     }
+
+ /*   public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
 
     public Date getFechaIngreso() {
         return fechaIngreso;
@@ -92,5 +99,5 @@ public class Estudiante {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
+    }*/
 }

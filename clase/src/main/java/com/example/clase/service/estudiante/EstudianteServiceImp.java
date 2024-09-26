@@ -1,4 +1,4 @@
-package com.example.clase.service;
+package com.example.clase.service.estudiante;
 
 import com.example.clase.entity.Estudiante;
 import com.example.clase.repository.EstudianteRepository;
@@ -25,8 +25,8 @@ public class EstudianteServiceImp implements EstudianteService {
     }
 
     @Override
-    public void post(Estudiante estudiante){
-        estudianteRepository.save(estudiante);
+    public Long post(Estudiante estudiante){
+        return estudianteRepository.save(estudiante).getId();
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.example.clase.controller;
 
 import com.example.clase.entity.Estudiante;
-import com.example.clase.service.EstudianteService;
+import com.example.clase.service.estudiante.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +25,9 @@ public class EstudianteController {
     }
 
     @PostMapping("/estudiante")
-    public void addEstudiante(@RequestBody Estudiante estudiante) {
-        estudianteService.post(estudiante);
+    public String addEstudiante(@RequestBody Estudiante estudiante) {
+        Long id = estudianteService.post(estudiante);
+        return "Estudiante creado con id = " + id;
     }
 
     @PutMapping("/estudiante")

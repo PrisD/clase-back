@@ -1,4 +1,4 @@
-package com.example.clase.service;
+package com.example.clase.service.estudiante;
 
 import com.example.clase.entity.Estudiante;
 
@@ -10,7 +10,7 @@ public interface EstudianteService {
 
     Optional<Estudiante> findById(Integer id);
 
-    void post(Estudiante estudiante);
+    Long post(Estudiante estudiante);
 
     void update(Estudiante estudiante);
 
