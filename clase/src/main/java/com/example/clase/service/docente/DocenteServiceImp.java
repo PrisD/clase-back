@@ -47,7 +47,7 @@ public class DocenteServiceImp implements DocenteService {
 
     @Override
     public List<Estudiante> getAlumnosActivos(Integer id) {
-        List<Curso> cursosActivos = cursoService.cursosActivosSegunFecha(new Date());
+        List<Curso> cursosActivos = cursoService.cursosSegunFechaFin(new Date());
         return new ArrayList<>();
     }
 }

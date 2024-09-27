@@ -16,6 +16,6 @@ public interface CursoService {
 
     Optional<Curso> findById(Integer id);
 
-    List<Curso> cursosActivosSegunFecha(Date fecha);
+    List<Curso> cursosSegunFechaFin(Date fecha);
 
 }

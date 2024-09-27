@@ -42,15 +42,7 @@ public class CursoServiceImp implements CursoService {
     }
 
     @Override
-    public List<Curso> cursosActivosSegunFecha(Date fecha){
-        List<Curso> cursosSegunFecha = new ArrayList<>();
-        cursoRepository.findAll().forEach(
-                curso -> {
-                    if (curso.getFechaFin() == fecha){
-                        cursosSegunFecha.add(curso);
-                    }
-                }
-        );
-        return cursosSegunFecha;
+    public List<Curso> cursosSegunFechaFin(Date fecha){
+        return cursoRepository.findByFechaFin(fecha);
     }
 }

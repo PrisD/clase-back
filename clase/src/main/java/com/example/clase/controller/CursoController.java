@@ -30,7 +30,7 @@ public class CursoController {
     @GetMapping("/curso")
     public Optional<Curso> getCurso (Integer id) { return cursoService.findById(id); }
 
-    @GetMapping("/cursos/{fecha}")
-    public List<Curso> getCursosActivosSegunFecha (@PathVariable Date fecha){ return cursoService.cursosActivosSegunFecha(fecha); }
+    @GetMapping("/cursos")
+    public List<Curso> getCursosSegunFechaFin(@RequestParam Date fecha){ return cursoService.cursosSegunFechaFin(fecha); }
 
 }
