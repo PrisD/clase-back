@@ -48,13 +48,6 @@ public class DocenteServiceImp implements DocenteService {
     @Override
     public List<Estudiante> getAlumnosActivos(Integer id) {
         List<Curso> cursosActivos = cursoService.cursosActivosSegunFecha(new Date());
-        List<Estudiante> estudiantes = new ArrayList<>();
-        for (Curso curso : cursosActivos) {
-            if (curso.getId().equals(id.longValue())) {
-                estudiantes = curso.getEstudiantes();
-                break;
-            }
-        }
-        return estudiantes;
+        return new ArrayList<>();
     }
 }

@@ -30,11 +30,6 @@ public class Curso {
     @Column(name = "precio")
     private Double precio ;
 
-    @OneToMany
-    @JoinColumn(name = "estudiante_id")
-    private List<Estudiante> estudiantes;
-
-
 
 
     public Date getFechaInicio() {
@@ -67,14 +62,6 @@ public class Curso {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
-    }
-
-    public List<Estudiante> getEstudiantes() {
-        return estudiantes;
-    }
-
-    public void setEstudiantes(List<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
     }
 
     public Tema getTema() {
