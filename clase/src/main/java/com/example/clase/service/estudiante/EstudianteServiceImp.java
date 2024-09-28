@@ -1,5 +1,6 @@
 package com.example.clase.service.estudiante;
 
+import com.example.clase.entity.Curso;
 import com.example.clase.entity.Estudiante;
 import com.example.clase.repository.EstudianteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class EstudianteServiceImp implements EstudianteService {
     @Override
     public void deleteById(Integer id){
         estudianteRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Estudiante> alumnosEnCurso(Long cursoId) {
+        return estudianteRepository.findAllByCurso_Id(cursoId);
     }
 
 

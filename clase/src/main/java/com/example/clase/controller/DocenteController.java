@@ -31,5 +31,5 @@ public class DocenteController {
     public Optional<Docente> getDocente (Integer id) { return docenteService.findById(id); }
 
     @GetMapping("/docente/{id}/alumnos")
-    public List<Estudiante> getAlumnosActivos(@PathVariable Integer id){ return docenteService.getAlumnosActivos(id); }
+    public List<Estudiante> getAlumnosActivos(@PathVariable Long id){ return docenteService.getAlumnosActivos(id); }
 }

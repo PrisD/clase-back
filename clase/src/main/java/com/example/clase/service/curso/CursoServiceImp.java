@@ -44,4 +44,10 @@ public class CursoServiceImp implements CursoService {
     public List<Curso> cursosSegunFechaFin(LocalDate fecha){
         return cursoRepository.findByFechaFin(fecha);
     }
+
+    @Override
+    public Curso cursosActivosPorProfesor(Long idProfesor){
+        LocalDate fecha = LocalDate.now();
+        return cursoRepository.findByDocente_IdAndFechaFinIsAfter(idProfesor, fecha);
+    }
 }

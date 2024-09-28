@@ -9,4 +9,6 @@ import java.util.List;
 public interface CursoRepository extends JpaRepository<Curso, Integer> {
 
     List<Curso> findByFechaFin(LocalDate fechaFin);
+
+    Curso findByDocente_IdAndFechaFinIsAfter(Long docente_id, LocalDate fechaFin);
 }

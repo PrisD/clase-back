@@ -16,5 +16,5 @@ public interface DocenteService {
 
     Optional<Docente> findById(Integer id);
 
-    List<Estudiante> getAlumnosActivos(Integer id);
+    List<Estudiante> getAlumnosActivos(Long id);
 }

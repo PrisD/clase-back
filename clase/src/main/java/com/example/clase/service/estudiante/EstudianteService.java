@@ -1,5 +1,6 @@
 package com.example.clase.service.estudiante;
 
+import com.example.clase.entity.Curso;
 import com.example.clase.entity.Estudiante;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface EstudianteService {
 
     void deleteById(Integer id);
 
+    List<Estudiante> alumnosEnCurso(Long cursoId);
 }

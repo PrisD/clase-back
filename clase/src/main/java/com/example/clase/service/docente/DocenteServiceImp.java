@@ -1,9 +1,11 @@
 package com.example.clase.service.docente;
 
+import com.example.clase.entity.Curso;
 import com.example.clase.entity.Docente;
 import com.example.clase.entity.Estudiante;
 import com.example.clase.repository.DocenteRepository;
 import com.example.clase.service.curso.CursoService;
+import com.example.clase.service.estudiante.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +18,13 @@ public class DocenteServiceImp implements DocenteService {
 
     DocenteRepository docenteRepository;
     CursoService cursoService;
+    EstudianteService estudianteService;
 
     @Autowired
-    public DocenteServiceImp(DocenteRepository docenteRepository, CursoService cursoService) {
+    public DocenteServiceImp(DocenteRepository docenteRepository, CursoService cursoService, EstudianteService estudianteService) {
         this.docenteRepository = docenteRepository;
         this.cursoService = cursoService;
+        this.estudianteService = estudianteService;
     }
 
     @Override
@@ -44,7 +48,9 @@ public class DocenteServiceImp implements DocenteService {
     }
 
     @Override
-    public List<Estudiante> getAlumnosActivos(Integer id) {
-        return new ArrayList<>();
+    public List<Estudiante> getAlumnosActivos(Long id) {
+       //  endpoint para que el profesor pueda conocer su curso, esto sería que el endpoint debe mostrar los alumnos del curso vigente de un profesor.
+        Long cursoId = cursoService.cursosActivosPorProfesor(id).getId();
+        return estudianteService.alumnosEnCurso(cursoId);
     }
 }

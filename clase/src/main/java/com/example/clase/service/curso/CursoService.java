@@ -18,4 +18,6 @@ public interface CursoService {
 
     List<Curso> cursosSegunFechaFin(LocalDate fecha);
 
+    Curso cursosActivosPorProfesor(Long idProfesor);
+
 }
