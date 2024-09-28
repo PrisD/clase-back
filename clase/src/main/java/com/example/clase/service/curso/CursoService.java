@@ -2,6 +2,7 @@ package com.example.clase.service.curso;
 
 import com.example.clase.entity.Curso;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,6 @@ public interface CursoService {
 
     Optional<Curso> findById(Integer id);
 
-    List<Curso> cursosSegunFechaFin(Date fecha);
+    List<Curso> cursosSegunFechaFin(LocalDate fecha);
 
 }

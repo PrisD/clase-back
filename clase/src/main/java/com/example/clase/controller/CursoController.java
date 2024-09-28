@@ -5,6 +5,7 @@ import com.example.clase.service.curso.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +32,6 @@ public class CursoController {
     public Optional<Curso> getCurso (Integer id) { return cursoService.findById(id); }
 
     @GetMapping("/cursos")
-    public List<Curso> getCursosSegunFechaFin(@RequestParam Date fecha){ return cursoService.cursosSegunFechaFin(fecha); }
+    public List<Curso> getCursosSegunFechaFin(@RequestParam LocalDate fecha){ return cursoService.cursosSegunFechaFin(fecha); }
 
 }

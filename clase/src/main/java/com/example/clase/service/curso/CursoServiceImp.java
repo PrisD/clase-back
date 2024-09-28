@@ -5,7 +5,7 @@ import com.example.clase.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -42,7 +42,7 @@ public class CursoServiceImp implements CursoService {
     }
 
     @Override
-    public List<Curso> cursosSegunFechaFin(Date fecha){
+    public List<Curso> cursosSegunFechaFin(LocalDate fecha){
         return cursoRepository.findByFechaFin(fecha);
     }
 }
