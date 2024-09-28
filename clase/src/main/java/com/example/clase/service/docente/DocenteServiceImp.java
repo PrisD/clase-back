@@ -1,6 +1,5 @@
 package com.example.clase.service.docente;
 
-import com.example.clase.entity.Curso;
 import com.example.clase.entity.Docente;
 import com.example.clase.entity.Estudiante;
 import com.example.clase.repository.DocenteRepository;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

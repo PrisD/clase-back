@@ -2,7 +2,7 @@ package com.example.clase.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 @Entity
@@ -18,7 +18,7 @@ public class Estudiante {
     private String nombre;
 
     @Column(name = "fecha_nac")
-    private Date fechaNac;
+    private LocalDate fechaNac;
 
     @ManyToOne
     @JoinColumn(name = "curso_id")
@@ -33,7 +33,7 @@ public class Estudiante {
     private int dni; // Cambié "address" a "dni" para coincidir con el nombre
 
     @Column(name = "fecha_ingreso")
-    private Date fechaIngreso;
+    private LocalDate fechaIngreso;
 
     @Column(name = "direccion")
     private String direccion;
@@ -75,15 +75,15 @@ public class Estudiante {
         this.curso = curso;
     }
 
-    public Date getFechaNac() {
+    public LocalDate getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
     }
 
- /*   public int getDni() {
+/*   public int getDni() {
         return dni;
     }
 
@@ -92,11 +92,11 @@ public class Estudiante {
     }
 
 
-    public Date getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
