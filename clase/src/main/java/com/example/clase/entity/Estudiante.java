@@ -1,6 +1,8 @@
 package com.example.clase.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.springframework.context.annotation.Lazy;
 
 import java.time.LocalDate;
 
@@ -20,8 +22,9 @@ public class Estudiante {
     @Column(name = "fecha_nac")
     private LocalDate fechaNac;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
+    @JsonIgnore
     private Curso curso;
 
 
