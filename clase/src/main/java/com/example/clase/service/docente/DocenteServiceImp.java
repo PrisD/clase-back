@@ -53,4 +53,9 @@ public class DocenteServiceImp implements DocenteService {
         Long cursoId = cursoService.cursosActivosPorProfesor(id).getId();
         return estudianteService.alumnosEnCurso(cursoId);
     }
+
+    @Override
+    public List<Docente> findAll() {
+        return docenteRepository.findAll();
+    }
 }

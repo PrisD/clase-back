@@ -1,10 +1,12 @@
 package com.example.clase.controller;
 
+import com.example.clase.entity.Docente;
 import com.example.clase.entity.Tema;
 import com.example.clase.service.tema.TemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,4 +29,9 @@ public class TemaController {
 
     @GetMapping("/tema")
     public Optional<Tema> getTema(Integer id) { return temaService.findById(id); }
+
+    @GetMapping("/temas")
+    public List<Tema> getTemas() {
+        return temaService.findAll();
+    }
 }

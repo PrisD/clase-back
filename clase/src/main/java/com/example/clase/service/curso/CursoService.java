@@ -20,4 +20,5 @@ public interface CursoService {
 
     Curso cursosActivosPorProfesor(Long idProfesor);
 
+    List<Curso> findAll();
 }

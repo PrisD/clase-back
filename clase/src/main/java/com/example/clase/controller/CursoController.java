@@ -31,6 +31,11 @@ public class CursoController {
     public Optional<Curso> getCurso (Integer id) { return cursoService.findById(id); }
 
     @GetMapping("/cursos")
+    public List<Curso> getCursos() {
+        return cursoService.findAll();
+    }
+
+    @GetMapping("/cursos-fin")
     public List<Curso> getCursosSegunFechaFin(@RequestParam LocalDate fecha){ return cursoService.cursosSegunFechaFin(fecha); }
 
 }

@@ -50,4 +50,9 @@ public class CursoServiceImp implements CursoService {
         LocalDate fecha = LocalDate.now();
         return cursoRepository.findByDocente_IdAndFechaFinIsAfter(idProfesor, fecha);
     }
+
+    @Override
+    public List<Curso> findAll() {
+        return cursoRepository.findAll();
+    }
 }

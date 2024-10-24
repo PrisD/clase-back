@@ -1,5 +1,6 @@
 package com.example.clase.controller;
 
+import com.example.clase.entity.Curso;
 import com.example.clase.entity.Docente;
 import com.example.clase.entity.Estudiante;
 import com.example.clase.service.docente.DocenteService;
@@ -29,6 +30,11 @@ public class DocenteController {
 
     @GetMapping("/docente")
     public Optional<Docente> getDocente (Integer id) { return docenteService.findById(id); }
+
+    @GetMapping("/docentes")
+    public List<Docente> getDocentes() {
+        return docenteService.findAll();
+    }
 
     @GetMapping("/docente/{id}/alumnos")
     public List<Estudiante> getAlumnosActivos(@PathVariable Long id){ return docenteService.getAlumnosActivos(id); }
