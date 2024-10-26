@@ -1,6 +1,5 @@
 package com.example.clase.controller;
 
-import com.example.clase.entity.Curso;
 import com.example.clase.entity.Docente;
 import com.example.clase.entity.Estudiante;
 import com.example.clase.service.docente.DocenteService;

@@ -1,6 +1,5 @@
 package com.example.clase.controller;
 
-import com.example.clase.entity.Docente;
 import com.example.clase.entity.Tema;
 import com.example.clase.service.tema.TemaService;
 import org.springframework.beans.factory.annotation.Autowired;

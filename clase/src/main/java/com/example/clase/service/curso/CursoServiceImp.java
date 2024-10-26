@@ -42,7 +42,7 @@ public class CursoServiceImp implements CursoService {
 
     @Override
     public List<Curso> cursosSegunFechaFin(LocalDate fecha){
-        return cursoRepository.findByFechaFin(fecha);
+        return cursoRepository.findAllByFechaFin(fecha);
     }
 
     @Override
