@@ -22,9 +22,8 @@ public class Estudiante {
     @Column(name = "fecha_nac")
     private LocalDate fechaNac;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "curso_id")
-    @JsonIgnore
+    @ManyToOne()
+    @JoinColumn(name = "curso_id", nullable = true)
     private Curso curso;
 
 

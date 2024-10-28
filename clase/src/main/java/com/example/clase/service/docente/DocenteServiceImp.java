@@ -49,10 +49,14 @@ public class DocenteServiceImp implements DocenteService {
 
     @Override
     public List<Estudiante> getAlumnosActivos(Long id) {
-       //  endpoint para que el profesor pueda conocer su curso, esto sería que el endpoint debe mostrar los alumnos del curso vigente de un profesor.
-        Long cursoId = cursoService.cursosActivosPorProfesor(id).getId();
+        Long cursoId = cursoService.cursosActivosPorProfesor(id) != null ?
+                cursoService.cursosActivosPorProfesor(id).getId() : null;
+        if (cursoId == null) {
+            return new ArrayList<>();
+        }
         return estudianteService.alumnosEnCurso(cursoId);
     }
+
 
     @Override
     public List<Docente> findAll() {
